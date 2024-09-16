@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Playpen+Sans:wght@100..800&family=Sofadi+One&display=swap");
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  font-family: "Playpen Sans", cursive;
+  /* font-family: "Sofadi One", system-ui ; */
+}
+
+.blurBg {
+  background: rgba(255, 255, 255, 0.486);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
