@@ -1,1 +1,5 @@
 _foulder name = it will not counted by routing
+for carousel = npm install embla-carousel-react and npm install -D tailwindcss postcss autoprefixer
+
+
+

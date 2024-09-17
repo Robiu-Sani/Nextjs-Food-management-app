@@ -1,6 +1,8 @@
 "use client"; // Ensure this file is client-side only
 import { useRouter } from "next/navigation";
+import { useState } from "react";
 import { useForm } from "react-hook-form";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 
 export default function SignUp() {
   const router = useRouter();
@@ -9,6 +11,8 @@ export default function SignUp() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // This function will handle form submission
   const onSubmit = (data) => {
@@ -73,7 +77,7 @@ export default function SignUp() {
           </div>
 
           {/* Password Field */}
-          <div>
+          <div className="relative">
             <label
               htmlFor="password"
               className="block text-gray-700 font-semibold"
@@ -81,7 +85,7 @@ export default function SignUp() {
               Password
             </label>
             <input
-              type="password"
+              type={showPassword ? "text" : "password"}
               id="password"
               {...register("password", {
                 required: "Password is required",
@@ -100,10 +104,16 @@ export default function SignUp() {
                 {errors.password.message}
               </p>
             )}
+            <span
+              className="absolute top-12 right-3 text-xl text-gray-900 transform -translate-y-1/2 cursor-pointer"
+              onClick={() => setShowPassword(!showPassword)}
+            >
+              {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+            </span>
           </div>
 
           {/* Confirm Password Field */}
-          <div>
+          <div className="relative">
             <label
               htmlFor="confirmPassword"
               className="block text-gray-700 font-semibold"
@@ -111,7 +121,7 @@ export default function SignUp() {
               Confirm Password
             </label>
             <input
-              type="password"
+              type={showConfirmPassword ? "text" : "password"}
               id="confirmPassword"
               {...register("confirmPassword", {
                 required: "Confirm password is required",
@@ -128,6 +138,12 @@ export default function SignUp() {
                 {errors.confirmPassword.message}
               </p>
             )}
+            <span
+              className="absolute top-12 right-3 text-xl text-gray-900 transform -translate-y-1/2 cursor-pointer"
+              onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+            >
+              {showConfirmPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+            </span>
           </div>
 
           {/* Address Field */}

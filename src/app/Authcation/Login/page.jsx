@@ -1,6 +1,8 @@
 "use client"; // Add this line to indicate client-side rendering
 import { useRouter } from "next/navigation"; // Ensure you're importing from "next/navigation" for Next.js 13+ with app directory
 import { useForm } from "react-hook-form";
+import { useState } from "react";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"; // Import icons
 
 export default function Login() {
   const router = useRouter();
@@ -9,6 +11,12 @@ export default function Login() {
     handleSubmit,
     formState: { errors },
   } = useForm();
+  const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
+
+  // Function to toggle password visibility
+  const togglePasswordVisibility = () => {
+    setShowPassword((prevState) => !prevState);
+  };
 
   // This function will handle form submission
   const onSubmit = (data) => {
@@ -53,7 +61,7 @@ export default function Login() {
             )}
           </div>
 
-          {/* Password Field */}
+          {/* Password Field with Visibility Toggle */}
           <div>
             <label
               htmlFor="password"
@@ -61,21 +69,29 @@ export default function Login() {
             >
               Password
             </label>
-            <input
-              type="password"
-              id="password"
-              {...register("password", {
-                required: "Password is required",
-                minLength: {
-                  value: 6,
-                  message: "Password must be at least 6 characters",
-                },
-              })}
-              className={`w-full px-4 py-2 mt-1 text-gray-900 border ${
-                errors.password ? "border-red-500" : "border-gray-700"
-              } rounded-md focus:outline-none bg-transparent placeholder:text-gray-900`}
-              placeholder="Enter your password"
-            />
+            <div className="relative">
+              <input
+                type={showPassword ? "text" : "password"} // Toggle between text and password
+                id="password"
+                {...register("password", {
+                  required: "Password is required",
+                  minLength: {
+                    value: 6,
+                    message: "Password must be at least 6 characters",
+                  },
+                })}
+                className={`w-full px-4 py-2 mt-1 text-gray-900 border ${
+                  errors.password ? "border-red-500" : "border-gray-700"
+                } rounded-md focus:outline-none bg-transparent placeholder:text-gray-900`}
+                placeholder="Enter your password"
+              />
+              <span
+                onClick={togglePasswordVisibility} // Trigger the toggle function on click
+                className="absolute right-3 top-4 text-xl cursor-pointer text-gray-900"
+              >
+                {showPassword ? <AiFillEyeInvisible /> : <AiFillEye />}
+              </span>
+            </div>
             {errors.password && (
               <p className="text-red-500 text-sm mt-1">
                 {errors.password.message}
