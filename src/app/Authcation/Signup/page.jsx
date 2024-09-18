@@ -184,7 +184,7 @@ export default function SignUp() {
             Already have an account?{" "}
             <button
               onClick={goToLogin}
-              className="text-orange-500 hover:text-orange-700 font-semibold focus:outline-none"
+              className="text-orange-900 hover:text-orange-700 font-semibold focus:outline-none"
             >
               Login
             </button>

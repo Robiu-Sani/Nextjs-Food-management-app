@@ -42,7 +42,7 @@ const Banner = () => {
       <div className="embla" ref={emblaRef}>
         <div className="flex">
           {/* Slide 1 */}
-          <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+          <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
               src={banner1}
@@ -50,10 +50,14 @@ const Banner = () => {
               className="object-cover w-full h-full"
               priority
             />
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Discover Endless Possibilities
               </h2>
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+                {" "}
+                Order Now{" "}
+              </button>
             </div>
           </div>
 
@@ -65,55 +69,71 @@ const Banner = () => {
               alt="Banner 2"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Innovation Meets Excellence
               </h2>
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+                {" "}
+                Order Now{" "}
+              </button>
             </div>
           </div>
 
           {/* Slide 3 */}
-          <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+          <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
               src={banner3}
               alt="Banner 3"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Your Journey to Success Starts Here
               </h2>
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+                {" "}
+                Order Now{" "}
+              </button>
             </div>
           </div>
 
           {/* Slide 4 */}
-          <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+          <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
               src={banner4}
               alt="Banner 4"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Crafting the Future, Today
               </h2>
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+                {" "}
+                Order Now{" "}
+              </button>
             </div>
           </div>
 
           {/* Slide 5 */}
-          <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+          <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
               src={banner5}
               alt="Banner 5"
               className="object-cover w-full h-full"
             />
-            <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
+            <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl lg:text-[100px] px-8 text-shadow-lg">
                 Empowering Ideas, Transforming Lives
               </h2>
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+                {" "}
+                Order Now{" "}
+              </button>
             </div>
           </div>
         </div>

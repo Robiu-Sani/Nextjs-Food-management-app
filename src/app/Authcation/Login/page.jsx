@@ -30,7 +30,7 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full min-h-screen py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-500 to-red-600">
+    <div className="w-full min-h-screen py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-700 to-red-900">
       <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">
           Feast-Frame Login
@@ -113,7 +113,7 @@ export default function Login() {
             Don`t have an account?{" "}
             <button
               onClick={goToSignup}
-              className="text-orange-500 hover:text-orange-700 font-semibold focus:outline-none"
+              className="text-orange-900 hover:text-orange-700 font-semibold focus:outline-none"
             >
               Sign up
             </button>
