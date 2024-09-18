@@ -43,6 +43,7 @@ const Banner = () => {
         <div className="flex">
           {/* Slide 1 */}
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
               src={banner1}
               alt="Banner 1"
@@ -50,55 +51,69 @@ const Banner = () => {
               priority
             />
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <h2>Welcome to Slide 1</h2>
+              <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
+                Discover Endless Possibilities
+              </h2>
             </div>
           </div>
 
           {/* Slide 2 */}
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
               src={banner2}
               alt="Banner 2"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <h2>Welcome to Slide 2</h2>
+              <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
+                Innovation Meets Excellence
+              </h2>
             </div>
           </div>
 
           {/* Slide 3 */}
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+            <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
               src={banner3}
               alt="Banner 3"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <h2>Welcome to Slide 3</h2>
+              <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
+                Your Journey to Success Starts Here
+              </h2>
             </div>
           </div>
 
           {/* Slide 4 */}
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+            <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
               src={banner4}
               alt="Banner 4"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <h2>Welcome to Slide 4</h2>
+              <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
+                Crafting the Future, Today
+              </h2>
             </div>
           </div>
 
           {/* Slide 5 */}
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
+            <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
               src={banner5}
               alt="Banner 5"
               className="object-cover w-full h-full"
             />
             <div className="absolute inset-0 flex items-center justify-center text-white text-4xl font-bold">
-              <h2>Welcome to Slide 5</h2>
+              <h2 className=" text-3xl text-center md:text-6xl lg:text-[100px] px-8 text-shadow-lg">
+                Empowering Ideas, Transforming Lives
+              </h2>
             </div>
           </div>
         </div>
