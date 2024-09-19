@@ -54,7 +54,7 @@ const Banner = () => {
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Discover Endless Possibilities
               </h2>
-              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
                 {" "}
                 Order Now{" "}
               </button>
@@ -73,7 +73,7 @@ const Banner = () => {
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Innovation Meets Excellence
               </h2>
-              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300   border-orange-900">
                 {" "}
                 Order Now{" "}
               </button>
@@ -92,7 +92,7 @@ const Banner = () => {
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Your Journey to Success Starts Here
               </h2>
-              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
                 {" "}
                 Order Now{" "}
               </button>
@@ -111,7 +111,7 @@ const Banner = () => {
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Crafting the Future, Today
               </h2>
-              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
                 {" "}
                 Order Now{" "}
               </button>
@@ -130,7 +130,7 @@ const Banner = () => {
               <h2 className=" text-3xl text-center md:text-6xl lg:text-[100px] px-8 text-shadow-lg">
                 Empowering Ideas, Transforming Lives
               </h2>
-              <button className="text-white font-bold text-xl px-5 py-2 rounded-md bg-orange-800 hover:bg-orange-700 border border-orange-900">
+              <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
                 {" "}
                 Order Now{" "}
               </button>
