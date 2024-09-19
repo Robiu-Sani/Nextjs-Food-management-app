@@ -10,10 +10,15 @@ import user from "../../_images/user.png";
 
 export default function NavBar() {
   const [menuOpen, setMenuOpen] = useState(false); // State to toggle menu
+  const [CallBox, setCallBox] = useState(false);
   const pathname = usePathname(); // Get the current pathname
 
   const toggleMenu = () => {
     setMenuOpen(!menuOpen); // Toggle the menu open/close
+  };
+
+  const HandleCallBox = () => {
+    setCallBox(!CallBox);
   };
 
   const navLinks = [
@@ -59,10 +64,41 @@ export default function NavBar() {
             <Image
               src={user}
               alt="User photo"
+              onClick={HandleCallBox}
               className="w-12 rounded-full border"
             />
             <div className="flex justify-center items-center bg-red-600 w-5 h-5 rounded-full absolute top-0 -right-2 text-white text-sm">
               55
+            </div>
+            <div
+              className={`border blurBg p-2 px-5 absolute  top-[65px] flex flex-col gap-1 ${
+                CallBox ? "right-0" : "-right-[20000%]"
+              }`}
+            >
+              <Link
+                href="/Notifections"
+                className={`${
+                  pathname === navLinks.href ? "text-orange-600" : ""
+                } font-bold hover:text-orange-600 transition-colors`}
+              >
+                Notifications
+              </Link>
+              <Link
+                href="/Profile"
+                className={`${
+                  pathname === navLinks.href ? "text-orange-600" : ""
+                } font-bold hover:text-orange-600 transition-colors`}
+              >
+                Profile
+              </Link>
+              <Link
+                href="/LogOut"
+                className={`${
+                  pathname === navLinks.href ? "text-orange-600" : ""
+                } font-bold hover:text-orange-600 transition-colors`}
+              >
+                LogOut
+              </Link>
             </div>
           </div>
           {/* Menu button for small screens */}
