@@ -38,7 +38,7 @@ export default function Introduction() {
           </p>
           <Link
             href={"/Products"}
-            className=" flex text-white justify-center items-center gap-3 px-5 p-2 rounded-md bg-orange-500 hover:bg-orange-700"
+            className=" flex text-white justify-center mb-5 items-center gap-3 px-5 p-2 rounded-md bg-orange-500 hover:bg-orange-700"
           >
             <IoFastFood />
             <span className="text-white font-bold">Order Now</span>

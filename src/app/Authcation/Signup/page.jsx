@@ -26,7 +26,7 @@ export default function SignUp() {
   };
 
   return (
-    <div className="w-full min-h-screen py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-500 to-red-600">
+    <div className="w-full pt-20 min-h-screen py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-500 to-red-600">
       <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">
           Feast-Frame Signup
