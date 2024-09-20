@@ -1,4 +1,5 @@
 import Banner from "./(HomeComponents)/Banner";
+import CategorySection from "./(HomeComponents)/CategorySection";
 import Introductin from "./(HomeComponents)/Introductin";
 import PopularFood from "./(HomeComponents)/PopularFood";
 import ProductsSection from "./(HomeComponents)/ProductsSection";
@@ -10,6 +11,7 @@ export default function Home() {
       <PopularFood></PopularFood>
       <Introductin></Introductin>
       <ProductsSection></ProductsSection>
+      <CategorySection></CategorySection>
     </div>
   );
 }
