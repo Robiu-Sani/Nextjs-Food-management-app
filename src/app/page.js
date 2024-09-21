@@ -1,6 +1,7 @@
 import Banner from "./(HomeComponents)/Banner";
 import CategorySection from "./(HomeComponents)/CategorySection";
 import Introductin from "./(HomeComponents)/Introductin";
+import OfferSection from "./(HomeComponents)/OfferSection";
 import PopularFood from "./(HomeComponents)/PopularFood";
 import ProductsSection from "./(HomeComponents)/ProductsSection";
 
@@ -12,6 +13,7 @@ export default function Home() {
       <Introductin></Introductin>
       <ProductsSection></ProductsSection>
       <CategorySection></CategorySection>
+      <OfferSection></OfferSection>
     </div>
   );
 }
