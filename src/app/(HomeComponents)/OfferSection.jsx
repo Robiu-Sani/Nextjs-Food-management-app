@@ -11,7 +11,7 @@ import logo from "../../_images/logo.webp";
 
 // Function to calculate remaining time
 const calculateTimeLeft = () => {
-  const targetDate = new Date("2024-11-31T23:59:59"); // Target date for the offer
+  const targetDate = new Date("2024-10-31T23:59:59"); // Target date for the offer
   const currentDate = new Date();
   const difference = targetDate - currentDate;
 
@@ -30,15 +30,24 @@ const calculateTimeLeft = () => {
 };
 
 export default function OfferSection() {
-  const [timeLeft, setTimeLeft] = useState(calculateTimeLeft());
+  const [timeLeft, setTimeLeft] = useState({});
+  const [mounted, setMounted] = useState(false); // Track when the component has mounted
 
   useEffect(() => {
+    // Set mounted to true when the component mounts
+    setMounted(true);
+
     const timer = setInterval(() => {
       setTimeLeft(calculateTimeLeft());
     }, 1000);
 
     return () => clearInterval(timer);
   }, []);
+
+  if (!mounted) {
+    // While waiting for the component to mount, don't render the countdown
+    return null;
+  }
 
   return (
     <div className="w-full relative py-10 flex justify-center items-center overflow-hidden min-h-[300px]">
