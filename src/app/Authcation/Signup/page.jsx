@@ -3,12 +3,15 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
+import image from "../../../_images/banner5.png";
+import Image from "next/image";
 
 export default function SignUp() {
   const router = useRouter();
   const {
     register,
     handleSubmit,
+    watch, // Add watch here to extract it from useForm
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false);
@@ -26,16 +29,24 @@ export default function SignUp() {
   };
 
   return (
-    <div className="w-full pt-20 min-h-screen py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-500 to-red-600">
-      <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
+    <div className="w-full pt-20 min-h-screen py-8 px-4 flex justify-center items-center relative">
+      <Image
+        src={image}
+        alt="bg-image"
+        className="min-w-[100%] h-full absolute"
+      />
+      <div className="w-full sm:max-w-[1000px] p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">
           Feast-Frame Signup
         </h2>
 
-        <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
+        <form
+          onSubmit={handleSubmit(onSubmit)}
+          className="grid grid-cols-1 sm:grid-cols-2 gap-5"
+        >
           {/* Name Field */}
           <div>
-            <label htmlFor="name" className="block text-gray-700 font-semibold">
+            <label htmlFor="name" className="block text-gray-900 font-semibold">
               Name
             </label>
             <input
@@ -56,7 +67,7 @@ export default function SignUp() {
           <div>
             <label
               htmlFor="email"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Email
             </label>
@@ -80,7 +91,7 @@ export default function SignUp() {
           <div className="relative">
             <label
               htmlFor="password"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Password
             </label>
@@ -116,7 +127,7 @@ export default function SignUp() {
           <div className="relative">
             <label
               htmlFor="confirmPassword"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Confirm Password
             </label>
@@ -126,7 +137,7 @@ export default function SignUp() {
               {...register("confirmPassword", {
                 required: "Confirm password is required",
                 validate: (value) =>
-                  value === watch("password") || "Passwords do not match",
+                  value === watch("password") || "Passwords do not match", // Using watch here
               })}
               className={`w-full px-4 py-2 mt-1 text-gray-900 border ${
                 errors.confirmPassword ? "border-red-500" : "border-gray-900"
@@ -147,10 +158,10 @@ export default function SignUp() {
           </div>
 
           {/* Address Field */}
-          <div>
+          <div className="w-full col-span-1 sm:col-span-2">
             <label
               htmlFor="address"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Address
             </label>
@@ -173,14 +184,14 @@ export default function SignUp() {
           {/* Signup Button */}
           <button
             type="submit"
-            className="w-full px-4 py-2 mt-4 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
+            className="w-full col-span-1 sm:col-span-2 px-4 py-2 mt-4 text-white bg-red-600 rounded-md hover:bg-red-700 focus:outline-none focus:ring-2 focus:ring-red-500"
           >
             Signup
           </button>
         </form>
 
         <div className="text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-900 text-sm">
             Already have an account?{" "}
             <button
               onClick={goToLogin}

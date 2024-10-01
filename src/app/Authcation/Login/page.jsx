@@ -3,6 +3,8 @@ import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"; // Import icons
+import image from "../../../_images/banner5.png";
+import Image from "next/image";
 
 export default function Login() {
   const router = useRouter();
@@ -30,9 +32,14 @@ export default function Login() {
   };
 
   return (
-    <div className="w-full min-h-screen pt-20 py-8 px-4 flex justify-center items-center bg-gradient-to-r from-orange-400 via-red-700 to-red-900">
+    <div className="w-full min-h-screen pt-20 py-8 px-4 flex justify-center items-center relative">
+      <Image
+        src={image}
+        alt="bg-image"
+        className="min-w-[100%] h-full absolute"
+      />
       <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
-        <h2 className="text-3xl font-bold text-center text-gray-800">
+        <h2 className="text-3xl font-bold text-center text-gray-900">
           Feast-Frame Login
         </h2>
 
@@ -41,7 +48,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="email"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Email
             </label>
@@ -65,7 +72,7 @@ export default function Login() {
           <div>
             <label
               htmlFor="password"
-              className="block text-gray-700 font-semibold"
+              className="block text-gray-900 font-semibold"
             >
               Password
             </label>
@@ -109,11 +116,11 @@ export default function Login() {
         </form>
 
         <div className="text-center">
-          <p className="text-gray-600">
+          <p className="text-gray-900 text-sm">
             Don`t have an account?{" "}
             <button
               onClick={goToSignup}
-              className="text-orange-900 hover:text-orange-700 font-semibold focus:outline-none"
+              className="text-orange-600 hover:text-orange-700 font-semibold focus:outline-none"
             >
               Sign up
             </button>
