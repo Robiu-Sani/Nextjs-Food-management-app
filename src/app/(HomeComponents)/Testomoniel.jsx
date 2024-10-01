@@ -1,6 +1,9 @@
 "use client";
 import { useState } from "react";
 import Image from "next/image";
+import user1 from "../../_images/user.jpeg";
+import user2 from "../../_images/user1.png";
+import user3 from "../../_images/user2.jpeg";
 import testImage from "../../_images/testmonial.jpeg"; // Replace this with the correct path to your background image
 
 export default function Testimonial() {
@@ -8,19 +11,19 @@ export default function Testimonial() {
     {
       name: "John Doe",
       review: "This service was amazing! I would highly recommend it.",
-      profile: "/images/profile1.jpg", // Place your profile images in the 'public/images' folder
+      profile: user1, // Place your profile images in the 'public/images' folder
       rating: 5,
     },
     {
       name: "Jane Smith",
       review: "Great experience, friendly staff, and excellent service.",
-      profile: "/images/profile2.jpg", // Ensure these images exist in the 'public/images' folder
+      profile: user2, // Ensure these images exist in the 'public/images' folder
       rating: 4,
     },
     {
       name: "Alice Johnson",
       review: "The food was delicious and delivered on time!",
-      profile: "/images/profile3.jpg", // Make sure image paths are correct
+      profile: user3, // Make sure image paths are correct
       rating: 5,
     },
   ];

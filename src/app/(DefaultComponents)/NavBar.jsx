@@ -71,6 +71,7 @@ export default function NavBar() {
               55
             </div>
             <div
+              onClick={HandleCallBox}
               className={`border blurBg p-2 px-5 absolute  top-[65px] flex flex-col gap-1 ${
                 CallBox ? "right-0" : "-right-[20000%]"
               }`}
