@@ -43,7 +43,7 @@ export default function Testimonial() {
     <div className="w-full py-10 bg-gray-50">
       <div className="container mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-5">
         {/* Testimonial Section */}
-        <div className="col-span-1 sm:col-span-2 flex flex-col items-center gap-5">
+        <div className="col-span-1 sm:col-span-2 flex w-full flex-col items-center gap-5">
           <h1 className="text-3xl font-bold">Testimonials</h1>
           <div className="flex items-center gap-4">
             <button
@@ -54,7 +54,7 @@ export default function Testimonial() {
             </button>
 
             {/* Testimonial Card */}
-            <div className="flex flex-col items-center bg-white p-5 rounded-lg shadow-lg">
+            <div className="flex flex-col items-center p-5 w-full">
               <Image
                 src={testimonials[currentIndex].profile}
                 alt={testimonials[currentIndex].name}
