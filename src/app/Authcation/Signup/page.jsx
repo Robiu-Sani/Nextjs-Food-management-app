@@ -11,6 +11,7 @@ export default function SignUp() {
   const {
     register,
     handleSubmit,
+    reset,
     watch, // Add watch here to extract it from useForm
     formState: { errors },
   } = useForm();
@@ -18,9 +19,23 @@ export default function SignUp() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
   // This function will handle form submission
-  const onSubmit = (data) => {
-    console.log(data);
-    // Add your signup logic here, like calling an API
+  const onSubmit = async (data) => {
+    const { confirmPassword, ...postData } = data;
+
+    console.log(postData); // Now confirmPassword is not included in postData
+
+    const res = await fetch("http://localhost:3000/api/users", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(postData), // Post data without confirmPassword
+    });
+
+    const value = await res.json();
+    console.log(value);
+
+    reset(); // Reset the form after submission
   };
 
   // Function to navigate to the login page

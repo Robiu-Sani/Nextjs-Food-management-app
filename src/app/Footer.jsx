@@ -1,5 +1,12 @@
 import React from "react";
-import { FaFacebookF, FaInstagram, FaTwitter } from "react-icons/fa";
+import {
+  FaFacebookF,
+  FaInstagram,
+  FaLinkedin,
+  FaTwitter,
+} from "react-icons/fa";
+import logo from "../_images/logo.webp";
+import Image from "next/image";
 
 export default function Footer() {
   return (
@@ -7,6 +14,7 @@ export default function Footer() {
       <div className="container mx-auto grid md:grid-cols-4 gap-5">
         {/* Logo and App Store Links */}
         <div>
+          <Image src={logo} alt="this is logo" className="w-[80px]" />
           <h2 className="text-2xl font-bold mb-3">Feast-Frame</h2>
           <p className="mb-3">Delicious food at your doorstep. Order now!</p>
           <div className="flex space-x-3 mb-3">
@@ -85,13 +93,17 @@ export default function Footer() {
             <h3 className="text-xl font-bold mb-3">Follow Us</h3>
             <div className="flex space-x-4">
               <a href="#" className="text-white hover:text-gray-400">
-                <FaFacebookF />
+                <FaFacebookF className="text-2xl" />
               </a>
               <a href="#" className="text-white hover:text-gray-400">
-                <FaInstagram />
+                <FaInstagram className="text-2xl" />
               </a>
               <a href="#" className="text-white hover:text-gray-400">
-                <FaTwitter />
+                <FaTwitter className="text-2xl" />
+              </a>
+
+              <a href="#" className="text-white hover:text-gray-400">
+                <FaLinkedin className="text-2xl" />
               </a>
             </div>
           </div>

@@ -11,7 +11,7 @@ import logo from "../../_images/logo.webp";
 
 // Function to calculate remaining time
 const calculateTimeLeft = () => {
-  const targetDate = new Date("2024-10-31T23:59:59"); // Target date for the offer
+  const targetDate = new Date("2025-10-31T23:59:59");
   const currentDate = new Date();
   const difference = targetDate - currentDate;
 

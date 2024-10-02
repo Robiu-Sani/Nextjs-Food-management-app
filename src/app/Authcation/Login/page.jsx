@@ -11,6 +11,7 @@ export default function Login() {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
@@ -23,6 +24,7 @@ export default function Login() {
   // This function will handle form submission
   const onSubmit = (data) => {
     console.log(data);
+    reset();
     // Add your login logic here, like calling an API
   };
 

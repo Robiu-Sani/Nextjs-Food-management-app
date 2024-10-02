@@ -9,3 +9,11 @@ export async function GET() {
   console.log(data);
   return NextResponse.json({ route: data });
 }
+
+export async function POST(request) {
+  const signUpData = await request.json();
+  await mongoose.connect(connectiondb, { useNewUrlParser: true });
+  const postData = new userSchema(signUpData);
+  const result = await postData.save();
+  return NextResponse.json({ result, success: true });
+}
