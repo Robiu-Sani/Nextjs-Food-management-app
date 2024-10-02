@@ -1,3 +1,9 @@
+import ContactBanner from "./ContactBanner";
+
 export default function page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <ContactBanner />
+    </div>
+  );
 }

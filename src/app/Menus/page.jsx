@@ -1,3 +1,9 @@
+import MenusBanner from "./MenusBanner";
+
 export default function page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <MenusBanner />
+    </div>
+  );
 }

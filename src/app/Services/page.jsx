@@ -1,3 +1,9 @@
+import ServicesBanner from "./ServicesBanner";
+
 export default function page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <ServicesBanner />
+    </div>
+  );
 }

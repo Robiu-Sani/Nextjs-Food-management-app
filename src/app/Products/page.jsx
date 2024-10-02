@@ -1,5 +1,10 @@
 import React from "react";
+import ProductBanner from "./ProductBanner";
 
 export default function page() {
-  return <div>page</div>;
+  return (
+    <div>
+      <ProductBanner />
+    </div>
+  );
 }
