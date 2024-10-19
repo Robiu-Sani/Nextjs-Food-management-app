@@ -1,7 +1,7 @@
 "use client"; // Add this line to indicate client-side rendering
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
 import toast, { Toaster } from "react-hot-toast"; // For toast notifications
@@ -45,6 +45,7 @@ export default function Login() {
           toast.success("Login successful!");
           setTimeout(() => {
             router.push("/"); // Redirect to home page after 2 seconds
+            location.reload();
           }, 2000);
         } else {
           // Show error toast if the password doesn't match
@@ -67,6 +68,14 @@ export default function Login() {
   const goToSignup = () => {
     router.push("/Authcation/Signup");
   };
+
+  useEffect(() => {
+    // Check localStorage for user data on component mount
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      router.push("/");
+    }
+  }, [router]);
 
   return (
     <div className="w-full min-h-screen pt-20 py-8 px-4 flex justify-center items-center relative">

@@ -1,6 +1,6 @@
 "use client";
 import { useRouter } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
@@ -68,13 +68,24 @@ export default function SignUp() {
       await signUpUser(postData);
       toast.success("Signup successful! Redirecting to homepage...");
       reset();
-      setTimeout(() => router.push("/"), 2000);
+      setTimeout(() => {
+        router.push("/");
+        location.reload();
+      }, 2000);
       const { password, ...userDataWithoutPassword } = postData;
       localStorage.setItem("user", JSON.stringify(userDataWithoutPassword));
     } catch (error) {
       toast.error(error.message || "Signup failed. Please try again.");
     }
   };
+
+  useEffect(() => {
+    // Check localStorage for user data on component mount
+    const storedUser = localStorage.getItem("user");
+    if (storedUser) {
+      router.push("/");
+    }
+  }, [router]);
 
   return (
     <div className="w-full pt-20 min-h-screen py-8 px-4 flex justify-center items-center relative">

@@ -89,10 +89,13 @@ export default function NavBar() {
 
               <div
                 onClick={handleCallBox}
-                className={`border blurBg p-2 px-5 absolute top-[65px] flex flex-col gap-1 ${
+                className={`border blurBg p-2  w-[200px] absolute top-[65px] flex flex-col gap-1 ${
                   callBox ? "right-0" : "-right-[20000%]"
                 }`}
               >
+                <h3 className="text-xl my-2 font-bold text-center">
+                  {user.name}
+                </h3>
                 <Link
                   href="/Notifications"
                   className={`${
