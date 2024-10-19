@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoFastFood } from "react-icons/io5";
-import bannerImage from "../../_images/banner4.jpg";
 
 export default function MenusBanner() {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src={bannerImage}
+        src="https://i.postimg.cc/d1L9X11r/banner4.png"
         alt="Feast-Frame Menus Banner"
         layout="fill"
         objectFit="cover"
@@ -28,7 +27,7 @@ export default function MenusBanner() {
         {/* Call to Action Button */}
         <Link
           href="/Products"
-          className="flex items-center gap-3 px-5 py-2 rounded-md bg-orange-500 hover:bg-orange-700 transition duration-300"
+          className="flex items-center gap-3 px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 transition duration-300"
         >
           <IoFastFood className="text-2xl" />
           <span className="font-bold">Order Now</span>

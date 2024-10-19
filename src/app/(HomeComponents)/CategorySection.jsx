@@ -35,6 +35,7 @@ export default function CategorySection() {
                   src={item.image}
                   alt="category image"
                   className="w-full h-full object-cover"
+                  // layout="fill"
                 />
                 <div className="absolute inset-0 bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 flex justify-center items-center transition-opacity duration-300">
                   <p className="text-white text-lg font-bold">{item.title}</p>

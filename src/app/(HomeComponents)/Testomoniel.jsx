@@ -61,9 +61,8 @@ export default function Testimonial() {
               <Image
                 src={testimonials[currentIndex].profile}
                 alt={testimonials[currentIndex].name}
-                width={80}
-                height={80}
-                className="w-[80px] h-[80px] rounded-full object-cover"
+                // layout="fill"
+                className="!w-[80px] !h-[80px] rounded-full object-cover"
               />
               <h3 className="text-lg font-semibold mt-3">
                 {testimonials[currentIndex].name}
@@ -95,6 +94,7 @@ export default function Testimonial() {
             src={testImage}
             alt="Background"
             className="w-[80%] rounded-lg"
+            // layout="fill"
           />
         </div>
       </div>

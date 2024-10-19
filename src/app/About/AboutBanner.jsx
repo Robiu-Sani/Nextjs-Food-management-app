@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoInformationCircleSharp } from "react-icons/io5";
-import bannerImage from "../../_images/banner1.jpg";
 
 export default function AboutBanner() {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src={bannerImage}
+        src="https://i.postimg.cc/65R9df9x/banner1.png"
         alt="Feast-Frame About Banner"
         layout="fill"
         objectFit="cover"
@@ -28,7 +27,7 @@ export default function AboutBanner() {
         {/* Call to Action Button */}
         <Link
           href="/About"
-          className="flex items-center gap-3 px-5 py-2 rounded-md bg-blue-500 hover:bg-blue-700 transition duration-300"
+          className="flex items-center gap-3 px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 transition duration-300"
         >
           <IoInformationCircleSharp className="text-2xl" />
           <span className="font-bold">Learn More</span>

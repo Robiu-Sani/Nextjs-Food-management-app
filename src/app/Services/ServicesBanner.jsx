@@ -28,7 +28,7 @@ export default function ServicesBanner() {
         {/* Call to Action Button */}
         <Link
           href="/Services"
-          className="flex items-center gap-3 px-5 py-2 rounded-md bg-green-500 hover:bg-green-700 transition duration-300"
+          className="flex items-center gap-3 px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 transition duration-300"
         >
           <IoRestaurant className="text-2xl" />
           <span className="font-bold">Explore Services</span>

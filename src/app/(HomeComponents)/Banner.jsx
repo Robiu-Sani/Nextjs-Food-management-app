@@ -3,10 +3,6 @@ import React, { useCallback, useEffect, useState } from "react";
 import useEmblaCarousel from "embla-carousel-react";
 import { FaArrowLeft, FaArrowRight } from "react-icons/fa";
 import Image from "next/image";
-import banner1 from "../../_images/banner1.jpg";
-import banner2 from "../../_images/banner2.jpg";
-import banner3 from "../../_images/banner3.jpeg";
-import banner4 from "../../_images/banner4.jpg";
 import banner5 from "../../_images/banner5.png";
 
 const Banner = () => {
@@ -45,18 +41,18 @@ const Banner = () => {
           <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
-              src={banner1}
+              src="https://i.postimg.cc/65R9df9x/banner1.png"
               alt="Banner 1"
-              className="object-cover w-full h-full"
+              className="object-cover min-h-full min-w-[100vw]"
               priority
+              fill
             />
             <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Discover Endless Possibilities
               </h2>
               <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
-                {" "}
-                Order Now{" "}
+                Order Now
               </button>
             </div>
           </div>
@@ -65,17 +61,17 @@ const Banner = () => {
           <div className="embla__slide min-w-full flex items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full bg-[#000000ab]"></div>
             <Image
-              src={banner2}
+              src="https://i.postimg.cc/bNFQt8NB/banner2.jpg"
               alt="Banner 2"
-              className="object-cover w-full h-full"
+              className="object-cover min-h-full min-w-[100vw]"
+              fill
             />
             <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Innovation Meets Excellence
               </h2>
               <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300   border-orange-900">
-                {" "}
-                Order Now{" "}
+                Order Now
               </button>
             </div>
           </div>
@@ -84,17 +80,17 @@ const Banner = () => {
           <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
-              src={banner3}
+              src="https://i.postimg.cc/tgr52PX9/banner3.jpg"
               alt="Banner 3"
-              className="object-cover w-full h-full"
+              className="object-cover min-h-full min-w-[100vw]"
+              fill
             />
             <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Your Journey to Success Starts Here
               </h2>
               <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
-                {" "}
-                Order Now{" "}
+                Order Now
               </button>
             </div>
           </div>
@@ -103,17 +99,17 @@ const Banner = () => {
           <div className="embla__slide min-w-full flex  items-center justify-center min-h-screen relative">
             <div className="absolute top-0 left-0 w-full h-full  bg-[#000000ab]"></div>
             <Image
-              src={banner4}
+              src="https://i.postimg.cc/d1L9X11r/banner4.png"
               alt="Banner 4"
-              className="object-cover w-full h-full"
+              className="object-cover min-h-full min-w-[100vw]"
+              fill
             />
             <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl px-8 lg:text-[100px] text-shadow-lg">
                 Crafting the Future, Today
               </h2>
               <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
-                {" "}
-                Order Now{" "}
+                Order Now
               </button>
             </div>
           </div>
@@ -124,15 +120,15 @@ const Banner = () => {
             <Image
               src={banner5}
               alt="Banner 5"
-              className="object-cover w-full h-full"
+              className="object-cover min-h-full min-w-[100vw]"
+              // fill
             />
             <div className="absolute inset-0 flex flex-col gap-7 items-center justify-center text-white text-4xl font-bold">
               <h2 className=" text-3xl text-center md:text-6xl lg:text-[100px] px-8 text-shadow-lg">
                 Empowering Ideas, Transforming Lives
               </h2>
               <button className="text-white font-bold text-xl px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 border transition delay-300  border-orange-900">
-                {" "}
-                Order Now{" "}
+                Order Now
               </button>
             </div>
           </div>

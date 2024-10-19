@@ -79,6 +79,7 @@ export default function ProductsSection() {
                 src={image}
                 alt="this is an food image"
                 className="h-full w-[70%]"
+                // layout="fill"
               />
             </div>
             <div className="w-full flex justify-between items-center flex-col">

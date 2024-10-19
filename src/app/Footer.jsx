@@ -14,7 +14,12 @@ export default function Footer() {
       <div className="container mx-auto grid md:grid-cols-4 gap-5">
         {/* Logo and App Store Links */}
         <div>
-          <Image src={logo} alt="this is logo" className="w-[80px]" />
+          <Image
+            src={logo}
+            alt="this is logo"
+            className="w-[80px]"
+            // layout="fill"
+          />
           <h2 className="text-2xl font-bold mb-3">Feast-Frame</h2>
           <p className="mb-3">Delicious food at your doorstep. Order now!</p>
           <div className="flex space-x-3 mb-3">

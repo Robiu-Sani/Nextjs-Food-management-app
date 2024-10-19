@@ -1,5 +1,4 @@
 import Image from "next/image";
-import bannerImage from "../../_images/banner2.jpg";
 import { IoFastFood } from "react-icons/io5";
 import Link from "next/link";
 
@@ -8,7 +7,7 @@ export default function ProductBanner() {
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src={bannerImage}
+        src="https://i.postimg.cc/bNFQt8NB/banner2.jpg"
         alt="Feast-Frame Banner"
         layout="fill"
         objectFit="cover"

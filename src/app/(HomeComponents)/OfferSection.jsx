@@ -11,7 +11,7 @@ import logo from "../../_images/logo.webp";
 
 // Function to calculate remaining time
 const calculateTimeLeft = () => {
-  const targetDate = new Date("2025-10-31T23:59:59");
+  const targetDate = new Date("2024-10-31T23:59:59");
   const currentDate = new Date();
   const difference = targetDate - currentDate;
 
@@ -56,6 +56,7 @@ export default function OfferSection() {
         src={image}
         alt="Offer Background"
         className="absolute top-0 left-0 w-full h-full object-cover"
+        layout="fill"
       />
 
       <div className="container mx-auto p-3 grid grid-cols-1 sm:grid-cols-2 gap-5 relative z-10">
@@ -107,18 +108,26 @@ export default function OfferSection() {
               src={food1}
               alt="food1"
               className="w-[120px] absolute -top-16"
+              // layout="fill"
             />
             <Image
               src={food2}
               alt="food2"
               className="w-[120px] absolute -left-12 bottom-2"
+              // layout="fill"
             />
             <Image
               src={food3}
               alt="food3"
               className="w-[120px] absolute -right-12 bottom-2"
+              // layout="fill"
             />
-            <Image src={logo} alt="our logo" className="w-[60px]" />
+            <Image
+              src={logo}
+              alt="our logo"
+              className="w-[60px]"
+              // layout="fill"
+            />
           </div>
         </div>
       </div>

@@ -2,8 +2,7 @@
 import { useRouter } from "next/navigation";
 import { useForm } from "react-hook-form";
 import { useState } from "react";
-import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai"; // Import icons
-import image from "../../../_images/banner5.png";
+import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
 
 export default function Login() {
@@ -36,9 +35,10 @@ export default function Login() {
   return (
     <div className="w-full min-h-screen pt-20 py-8 px-4 flex justify-center items-center relative">
       <Image
-        src={image}
+        src="https://i.postimg.cc/9QLZhhsp/banner5.png"
         alt="bg-image"
         className="min-w-[100%] h-full absolute"
+        layout="fill"
       />
       <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-900">

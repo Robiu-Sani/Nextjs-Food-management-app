@@ -1,6 +1,5 @@
 "use client";
 import Image from "next/image";
-import bg from "../../_images/subbanner2.jpg";
 import cook from "../../_images/cook.png";
 import phone from "../../_images/phone.png";
 import Link from "next/link";
@@ -11,7 +10,7 @@ export default function Introduction() {
     <div className="pt-10 w-full relative overflow-hidden">
       {/* Background Image */}
       <Image
-        src={bg}
+        src="https://i.postimg.cc/bNFQt8NB/banner2.jpg"
         alt="bg image"
         className="min-w-full z-0 absolute top-0 h-full object-cover"
         layout="fill"
@@ -22,7 +21,12 @@ export default function Introduction() {
       <div className="container mx-auto grid z-30 relative sm:grid-cols-2 md:grid-cols-3 grid-cols-1 gap-3">
         {/* Left Image */}
         <div className="w-full hidden md:flex justify-center">
-          <Image src={cook} alt="cook image" className="w-[70%] z-20 mx-auto" />
+          <Image
+            src={cook}
+            alt="cook image"
+            className="w-[70%] z-20 mx-auto"
+            // layout="fill"
+          />
         </div>
 
         {/* Text Content */}
@@ -33,7 +37,7 @@ export default function Introduction() {
           <p className=" z-30 text-white drop-shadow text-sm mb-4">
             At our kitchen, we bring together the art of cooking and the joy of
             sharing delicious meals. Whether you are a novice or an experienced
-            cook, you'll find inspiration, tips, and recipes to elevate your
+            cook, you`ll find inspiration, tips, and recipes to elevate your
             culinary skills.
           </p>
           <Link
@@ -51,6 +55,7 @@ export default function Introduction() {
             src={phone}
             alt="phone image"
             className="w-[70%] h-auto z-20 mx-auto"
+            // layout="fill"
           />
         </div>
       </div>

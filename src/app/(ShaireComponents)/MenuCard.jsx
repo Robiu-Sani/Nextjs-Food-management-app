@@ -10,6 +10,7 @@ export default function MenuCard({ data }) {
           src={data.image}
           alt="this is product image"
           className="w-[60px] h-[60px] rounded-full"
+          // layout="fill"
         />
         <div className="">
           <h3 className="text-xl font-bold">{data.foodName}</h3>

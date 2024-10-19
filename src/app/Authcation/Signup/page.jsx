@@ -3,7 +3,6 @@ import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
-import image from "../../../_images/banner5.png";
 import Image from "next/image";
 
 export default function SignUp() {
@@ -46,9 +45,10 @@ export default function SignUp() {
   return (
     <div className="w-full pt-20 min-h-screen py-8 px-4 flex justify-center items-center relative">
       <Image
-        src={image}
+        src="https://i.postimg.cc/9QLZhhsp/banner5.png"
         alt="bg-image"
         className="min-w-[100%] h-full absolute"
+        layout="fill"
       />
       <div className="w-full sm:max-w-[1000px] p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">

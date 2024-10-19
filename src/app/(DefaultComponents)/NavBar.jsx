@@ -66,6 +66,7 @@ export default function NavBar() {
               alt="User photo"
               onClick={HandleCallBox}
               className="w-12 rounded-full border"
+              // layout="fill"
             />
             <div className="flex justify-center items-center bg-red-600 w-5 h-5 rounded-full absolute top-0 -right-2 text-white text-sm">
               55

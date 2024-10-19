@@ -1,14 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { IoMailSharp } from "react-icons/io5";
-import bannerImage from "../../_images/subbanner2.jpg";
 
 export default function ContactBanner() {
   return (
     <div className="relative w-full h-[400px] md:h-[500px] lg:h-[600px] overflow-hidden">
       {/* Background Image */}
       <Image
-        src={bannerImage}
+        src="https://i.postimg.cc/bNFQt8NB/banner2.jpg"
         alt="Feast-Frame Contact Banner"
         layout="fill"
         objectFit="cover"
@@ -28,7 +27,7 @@ export default function ContactBanner() {
         {/* Call to Action Button */}
         <Link
           href="/Contact"
-          className="flex items-center gap-3 px-5 py-2 rounded-md bg-red-500 hover:bg-red-700 transition duration-300"
+          className="flex items-center gap-3 px-5 py-2 rounded-md hover:bg-orange-800 bg-orange-600 transition duration-300"
         >
           <IoMailSharp className="text-2xl" />
           <span className="font-bold">Contact Us</span>
