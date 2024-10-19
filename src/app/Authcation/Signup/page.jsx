@@ -1,9 +1,10 @@
-"use client"; // Ensure this file is client-side only
+"use client";
 import { useRouter } from "next/navigation";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
+import { toast, Toaster } from "react-hot-toast";
 
 export default function SignUp() {
   const router = useRouter();
@@ -11,35 +12,66 @@ export default function SignUp() {
     register,
     handleSubmit,
     reset,
-    watch, // Add watch here to extract it from useForm
+    watch,
     formState: { errors },
   } = useForm();
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
-  // This function will handle form submission
-  const onSubmit = async (data) => {
-    const { confirmPassword, ...postData } = data;
-
-    console.log(postData); // Now confirmPassword is not included in postData
-
-    const res = await fetch("http://localhost:3000/api/users", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(postData), // Post data without confirmPassword
-    });
-
-    const value = await res.json();
-    console.log(value);
-
-    reset(); // Reset the form after submission
+  // Function to check if user already exists by email
+  const checkUserExists = async (email) => {
+    try {
+      const res = await fetch(`http://localhost:3000/api/users/${email}`);
+      const data = await res.json();
+      return data.exists; // true if user exists
+    } catch (error) {
+      throw new Error("Failed to check user existence.");
+    }
   };
 
-  // Function to navigate to the login page
-  const goToLogin = () => {
-    router.push("/Authcation/Login");
+  // Function to sign up a new user
+  const signUpUser = async (postData) => {
+    try {
+      const res = await fetch("http://localhost:3000/api/users", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(postData),
+      });
+
+      if (!res.ok) {
+        throw new Error("Failed to sign up");
+      }
+
+      const result = await res.json();
+      return result;
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  // Form submission handler
+  const onSubmit = async (data) => {
+    const { confirmPassword, ...postData } = data;
+    const email = data.email;
+
+    try {
+      // Check if email is already in use
+      const userExists = await checkUserExists(email);
+      if (userExists) {
+        toast.error("Email is already registered. Please log in.");
+        return;
+      }
+
+      // If no user exists, proceed with signup
+      await signUpUser(postData);
+      toast.success("Signup successful! Redirecting to homepage...");
+      reset();
+      setTimeout(() => router.push("/"), 2000);
+    } catch (error) {
+      toast.error(error.message || "Signup failed. Please try again.");
+    }
   };
 
   return (
@@ -50,6 +82,7 @@ export default function SignUp() {
         className="min-w-[100%] h-full absolute"
         layout="fill"
       />
+      <Toaster className="!z-[10000] absolute top-10" />
       <div className="w-full sm:max-w-[1000px] p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-800">
           Feast-Frame Signup
@@ -152,7 +185,7 @@ export default function SignUp() {
               {...register("confirmPassword", {
                 required: "Confirm password is required",
                 validate: (value) =>
-                  value === watch("password") || "Passwords do not match", // Using watch here
+                  value === watch("password") || "Passwords do not match",
               })}
               className={`w-full px-4 py-2 mt-1 text-gray-900 border ${
                 errors.confirmPassword ? "border-red-500" : "border-gray-900"
@@ -209,10 +242,10 @@ export default function SignUp() {
           <p className="text-gray-900 text-sm">
             Already have an account?{" "}
             <button
-              onClick={goToLogin}
-              className="text-orange-900 hover:text-orange-700 font-semibold focus:outline-none"
+              onClick={() => router.push("/Authcation/Login")}
+              className="text-orange-900 hover:text-orange-700 underline"
             >
-              Login
+              Login here
             </button>
           </p>
         </div>

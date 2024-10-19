@@ -31,7 +31,7 @@ export default function NavBar() {
   ];
 
   return (
-    <div className="blurBg w-full p-3 fixed top-0 z-[9999999]">
+    <div className="blurBg w-full p-3 fixed top-0 z-[9999]">
       <div className="container mx-auto flex justify-between items-center gap-2">
         <Link href="/" className="flex justify-center items-center gap-3">
           <Image src={image} alt="Logo" className="w-12" />
@@ -60,6 +60,13 @@ export default function NavBar() {
           </div>
 
           {/* User icon */}
+          <Link
+            href="/Authcation/Login"
+            className="px-4 p-2 rounded-md text-white bg-orange-500 hover:bg-orange-600"
+          >
+            {" "}
+            Login{" "}
+          </Link>
           <div className="relative cursor-pointer">
             <Image
               src={user}

@@ -4,6 +4,8 @@ import { useForm } from "react-hook-form";
 import { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
+import toast, { Toaster } from "react-hot-toast"; // For toast notifications
+import axios from "axios"; // Axios for API requests
 
 export default function Login() {
   const router = useRouter();
@@ -13,18 +15,52 @@ export default function Login() {
     reset,
     formState: { errors },
   } = useForm();
-  const [showPassword, setShowPassword] = useState(false); // State to manage password visibility
+  const [showPassword, setShowPassword] = useState(false);
 
   // Function to toggle password visibility
   const togglePasswordVisibility = () => {
     setShowPassword((prevState) => !prevState);
   };
 
-  // This function will handle form submission
-  const onSubmit = (data) => {
-    console.log(data);
-    reset();
-    // Add your login logic here, like calling an API
+  // Handle form submission
+  const onSubmit = async (data) => {
+    try {
+      // Fetch user data from the API
+      const response = await axios.get(
+        `http://localhost:3000/api/users/${data.email}`
+      );
+      const user = response.data;
+
+      // Debugging: Log the user object to ensure you're getting the correct data
+      console.log("User data from API:", user.user);
+
+      // Check if the user exists and the password matches
+      if (user) {
+        if (user.user.password === data.password) {
+          // Remove the password from the user data before storing it in localStorage
+          const { password, ...userDataWithoutPassword } = user.user;
+          localStorage.setItem("user", JSON.stringify(userDataWithoutPassword));
+
+          // Show success toast and redirect to home page
+          toast.success("Login successful!");
+          setTimeout(() => {
+            router.push("/"); // Redirect to home page after 2 seconds
+          }, 2000);
+        } else {
+          // Show error toast if the password doesn't match
+          toast.error("Invalid password");
+        }
+      } else {
+        // Show error toast if the user doesn't exist
+        toast.error("User not found");
+      }
+    } catch (error) {
+      console.error("API Error:", error);
+      // Show error toast if there's a server error or any other issue
+      toast.error("An error occurred, please try again.");
+    }
+
+    reset(); // Reset the form after submission
   };
 
   // Function to navigate to the signup page
@@ -40,6 +76,7 @@ export default function Login() {
         className="min-w-[100%] h-full absolute"
         layout="fill"
       />
+      <Toaster className="!z-[10000] absolute top-10" />
       <div className="w-full max-w-md p-8 space-y-6 blurBg rounded-lg shadow-lg">
         <h2 className="text-3xl font-bold text-center text-gray-900">
           Feast-Frame Login
