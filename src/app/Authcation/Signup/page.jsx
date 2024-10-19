@@ -69,6 +69,8 @@ export default function SignUp() {
       toast.success("Signup successful! Redirecting to homepage...");
       reset();
       setTimeout(() => router.push("/"), 2000);
+      const { password, ...userDataWithoutPassword } = postData;
+      localStorage.setItem("user", JSON.stringify(userDataWithoutPassword));
     } catch (error) {
       toast.error(error.message || "Signup failed. Please try again.");
     }
