@@ -97,9 +97,9 @@ export default function NavBar() {
                   {user.name}
                 </h3>
                 <Link
-                  href="/Notifications"
+                  href="/Notifections"
                   className={`${
-                    pathname === "/Notifications" ? "text-orange-600" : ""
+                    pathname === "/Notifections" ? "text-orange-600" : ""
                   } font-bold hover:text-orange-600 transition-colors`}
                 >
                   Notifications

@@ -3,6 +3,7 @@ import { useEffect, useState } from "react";
 import axios from "axios";
 import ProductsCard from "./ProductsCard";
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // React Icons
+import Loading from "../(DefaultComponents)/Loading";
 
 export default function ShowProducts() {
   // State to store fetched products and pagination
@@ -40,7 +41,7 @@ export default function ShowProducts() {
     }
   };
 
-  if (loading) return <p>Loading products...</p>;
+  if (loading) return <Loading />;
   if (error) return <p>{error}</p>;
 
   return (

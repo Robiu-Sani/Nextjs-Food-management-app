@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 export default function ProductsCard({ product }) {
   console.log(product.image); // Check the URL in the console
@@ -27,9 +28,12 @@ export default function ProductsCard({ product }) {
         <button className="w-full rounded-md border font-medium p-1 border-orange-500 text-sm bg-white text-orange-500 hover:text-white hover:bg-orange-500">
           Add Cart
         </button>
-        <button className="w-full rounded-md border font-medium p-1 bg-orange-500 text-sm border-orange-500 hover:bg-orange-600 text-white">
+        <Link
+          href={`/Products/${product?._id}`}
+          className="w-full rounded-md border text-center font-medium p-1 bg-orange-500 text-sm border-orange-500 hover:bg-orange-600 text-white"
+        >
           Details
-        </button>
+        </Link>
       </div>
     </div>
   );

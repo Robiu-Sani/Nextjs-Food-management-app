@@ -2,11 +2,16 @@ import React from "react";
 
 export default function ExtraBanner() {
   return (
-    <div className="w-full  min-h-[70vh] py-12">
+    <div className="w-full  max-h-[400px] py-12">
       <div className="container mx-auto px-2 grid grid-cols-1 sm:grid-cols-2 gap-8 justify-center items-center">
         {/* Video Container */}
         <div className="w-full flex justify-center items-center">
-          <video className="max-w-[70%] max-h-full h-auto " autoPlay loop muted>
+          <video
+            className="max-w-[70%] max-h-[350px] h-auto "
+            autoPlay
+            loop
+            muted
+          >
             <source
               src="https://bettermeter-s3-buckets-analytics-cache-dev.s3.amazonaws.com/assets/designstripe/assets.mp4"
               type="video/mp4"
