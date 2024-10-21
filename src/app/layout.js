@@ -29,7 +29,7 @@ export default function RootLayout({ children }) {
         <link rel="shortcut icon" href={favicon} />
       </Head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased relative`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-white relative`}
       >
         <NavBar></NavBar>
         {children}

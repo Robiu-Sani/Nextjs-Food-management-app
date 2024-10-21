@@ -5,6 +5,7 @@ import { useEffect, useState } from "react";
 import FoodDetails from "./FoodDetails";
 import Loading from "@/app/(DefaultComponents)/Loading";
 import axios from "axios"; // Import axios
+import UserInformationForm from "./UserInformationForm";
 
 export default function Page() {
   const { id } = useParams();
@@ -45,6 +46,7 @@ export default function Page() {
           </div>
         )}
       </div>
+      <UserInformationForm />
     </div>
   );
 }
