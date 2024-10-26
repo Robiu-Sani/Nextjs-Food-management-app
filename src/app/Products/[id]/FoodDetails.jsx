@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-export default function FoodDetails({ food }) {
+export default function FoodDetails({ food, HandleCallBuy, makeOrder }) {
   return (
     <div className="container mx-auto px-2 grid grid-cols-1 sm:grid-cols-2 gap-6  overflow-hidden">
       <div className="w-full">
@@ -40,7 +40,10 @@ export default function FoodDetails({ food }) {
           <button className="w-full rounded-md border font-medium p-2 border-orange-500 text-sm bg-white text-orange-500 hover:text-white hover:bg-orange-500 transition-all duration-200">
             Add to Cart
           </button>
-          <button className="w-full rounded-md border text-center font-medium p-2 bg-orange-500 text-sm border-orange-500 hover:bg-orange-600 text-white transition-all duration-200">
+          <button
+            onClick={() => HandleCallBuy(!makeOrder)}
+            className="w-full rounded-md border text-center font-medium p-2 bg-orange-500 text-sm border-orange-500 hover:bg-orange-600 text-white transition-all duration-200"
+          >
             Buy Now
           </button>
         </div>

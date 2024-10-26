@@ -9,9 +9,10 @@ import UserInformationForm from "./UserInformationForm";
 
 export default function Page() {
   const { id } = useParams();
-  const [foodData, setFoodData] = useState(null); // Set initial value to null for better handling
+  const [foodData, setFoodData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const [makeOrder, setMakeOrder] = useState(false);
 
   // Declare fetchFoodData before useEffect
   const fetchFoodData = async () => {
@@ -30,6 +31,10 @@ export default function Page() {
     fetchFoodData();
   }, [id]);
 
+  const HandleCallBuy = (data) => {
+    setMakeOrder(data);
+  };
+
   if (loading) return <Loading />;
 
   if (error) return <p>{error}</p>;
@@ -38,15 +43,19 @@ export default function Page() {
     <div>
       <ExtraBanner />
       <div className="container mx-auto px-3 py-5">
-        {foodData ? (
-          <FoodDetails food={foodData.food} />
+        {makeOrder ? (
+          <UserInformationForm
+            makeOrder={makeOrder}
+            HandleCallBuy={HandleCallBuy}
+          />
         ) : (
-          <div className="h-[500px] flex justify-center items-center">
-            <p className="text-center">No food data available</p>
-          </div>
+          <FoodDetails
+            makeOrder={makeOrder}
+            HandleCallBuy={HandleCallBuy}
+            food={foodData.food}
+          />
         )}
       </div>
-      <UserInformationForm />
     </div>
   );
 }

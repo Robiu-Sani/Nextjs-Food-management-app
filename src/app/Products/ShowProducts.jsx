@@ -1,38 +1,18 @@
 "use client";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useState } from "react";
 import ProductsCard from "./ProductsCard";
-import { FaChevronLeft, FaChevronRight } from "react-icons/fa"; // React Icons
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Loading from "../(DefaultComponents)/Loading";
+import useFetchProducts from "../(customHooks)/useFetchProducts";
 
 export default function ShowProducts() {
-  // State to store fetched products and pagination
-  const [products, setProducts] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
   const [currentPage, setCurrentPage] = useState(1); // For pagination
-  const [totalPages, setTotalPages] = useState(1);
   const limit = 12; // Items per page
 
-  // Fetch data from the API when the component mounts or page changes
-  useEffect(() => {
-    const fetchProducts = async () => {
-      setLoading(true);
-      try {
-        const response = await axios.get(
-          `http://localhost:3000/api/foods?page=${currentPage}&limit=${limit}`
-        );
-        setProducts(response.data.foods);
-        setTotalPages(response.data.totalPages); // Get the total number of pages
-        setLoading(false);
-      } catch (err) {
-        setError("Failed to fetch products");
-        setLoading(false);
-      }
-    };
-
-    fetchProducts();
-  }, [currentPage]); // Re-fetch when page changes
+  const { products, loading, error, totalPages } = useFetchProducts(
+    currentPage,
+    limit
+  );
 
   // Pagination handler
   const goToPage = (page) => {
@@ -46,6 +26,21 @@ export default function ShowProducts() {
 
   return (
     <div className="container mx-auto px-2 py-10">
+      <div className="w-full mb-7 flex gap-5 flex-col sm:flex-row justify-start items-center">
+        <input
+          type="search"
+          className="w-full sm:w-[350px]  p-1 px-3 rounded-md outline-0 border "
+          placeholder="Search Here"
+        />
+        <select
+          className="w-full sm:w-[250px] p-1 px-3 rounded-md outline-0 border"
+          placeholder="Select A Category"
+        >
+          <option value="">fgd;flg</option>
+          <option value="">fgd;flg</option>
+          <option value="">fgd;flg</option>
+        </select>
+      </div>
       <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-3 ">
         {products.length > 0 ? (
           products.map((product) => (

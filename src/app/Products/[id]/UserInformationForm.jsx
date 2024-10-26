@@ -1,7 +1,7 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 
-export default function UserInformationForm() {
+export default function UserInformationForm({ HandleCallBuy, makeOrder }) {
   const {
     register,
     handleSubmit,
@@ -14,7 +14,13 @@ export default function UserInformationForm() {
   };
 
   return (
-    <div className="container mx-auto my-10 p-8 bg-white ">
+    <div className="container relative mx-auto my-10 p-8 bg-white ">
+      <button
+        onClick={() => HandleCallBuy(!makeOrder)}
+        className="absolute top-0 left-4 p-2 px-5 rounded-md border-0 bg-orange-500 text-white"
+      >
+        Back
+      </button>
       <h2 className="text-3xl font-bold text-orange-600 mb-6 text-center">
         User Information Form
       </h2>
