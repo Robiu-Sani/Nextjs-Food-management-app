@@ -13,7 +13,7 @@ export default function useFetchProducts(page = 1, limit = 12) {
       setLoading(true);
       try {
         const response = await axios.get(
-          `http://localhost:3000/api/foods?page=${page}&limit=${limit}`
+          `/api/foods?page=${page}&limit=${limit}`
         );
         setProducts(response.data.foods);
         setTotalPages(response.data.totalPages);

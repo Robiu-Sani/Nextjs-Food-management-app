@@ -18,7 +18,7 @@ export default function Page() {
   const fetchFoodData = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:3000/api/foods/${id}`);
+      const response = await axios.get(`/api/foods/${id}`);
       setFoodData(response.data);
     } catch (error) {
       setError("Failed to fetch food data.");

@@ -5,6 +5,7 @@ import { useForm } from "react-hook-form";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import Image from "next/image";
 import { toast, Toaster } from "react-hot-toast";
+import axios from "axios";
 
 export default function SignUp() {
   const router = useRouter();
@@ -21,7 +22,7 @@ export default function SignUp() {
   // Function to check if user already exists by email
   const checkUserExists = async (email) => {
     try {
-      const res = await fetch(`http://localhost:3000/api/users/${email}`);
+      const res = await axios.get(`/api/users/${email}`);
       const data = await res.json();
       return data.exists; // true if user exists
     } catch (error) {
@@ -32,7 +33,7 @@ export default function SignUp() {
   // Function to sign up a new user
   const signUpUser = async (postData) => {
     try {
-      const res = await fetch("http://localhost:3000/api/users", {
+      const res = await axios.get("/api/users", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

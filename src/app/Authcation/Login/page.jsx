@@ -26,9 +26,7 @@ export default function Login() {
   const onSubmit = async (data) => {
     try {
       // Fetch user data from the API
-      const response = await axios.get(
-        `http://localhost:3000/api/users/${data.email}`
-      );
+      const response = await axios.get(`/api/users/${data.email}`);
       const user = response.data;
 
       // Debugging: Log the user object to ensure you're getting the correct data

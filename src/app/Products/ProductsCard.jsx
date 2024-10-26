@@ -2,7 +2,6 @@ import Image from "next/image";
 import Link from "next/link";
 
 export default function ProductsCard({ product }) {
-  console.log(product.image); // Check the URL in the console
   return (
     <div className="w-full relative bg-white rounded-md shadow-md p-3 flex flex-col justify-between items-center gap-2">
       <div className="w-[80%] h-[100px] sm:h-[130px] rounded-lg overflow-hidden">
