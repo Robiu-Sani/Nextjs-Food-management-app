@@ -152,7 +152,7 @@ export default function Login() {
 
         <div className="text-center">
           <p className="text-gray-900 text-sm">
-            Don't have an account?{" "}
+            Don`t have an account?{" "}
             <button
               onClick={goToSignup}
               className="text-orange-600 hover:text-orange-700 font-semibold focus:outline-none"
