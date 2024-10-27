@@ -23,8 +23,7 @@ export default function SignUp() {
   const checkUserExists = async (email) => {
     try {
       const res = await axios.get(`/api/users/${email}`);
-      const data = await res.json();
-      return data.exists; // true if user exists
+      return res.data.exists; // true if user exists
     } catch (error) {
       throw new Error("Failed to check user existence.");
     }
@@ -33,20 +32,11 @@ export default function SignUp() {
   // Function to sign up a new user
   const signUpUser = async (postData) => {
     try {
-      const res = await axios.get("/api/users", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(postData),
-      });
-
-      if (!res.ok) {
+      const res = await axios.post("/api/users", postData);
+      if (res.status !== 200) {
         throw new Error("Failed to sign up");
       }
-
-      const result = await res.json();
-      return result;
+      return res.data;
     } catch (error) {
       throw error;
     }

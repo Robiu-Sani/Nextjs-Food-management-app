@@ -1,9 +1,10 @@
 "use client";
+
 import { useEffect, useState } from "react";
-import ProductsCard from "./ProductsCard"; // Adjust the import path as needed
+import ProductsCard from "./ProductsCard"; // Adjust path as needed
 import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
-import Loading from "../(DefaultComponents)/Loading"; // Adjust the import path as needed
-import useCategoryData from "../(customHooks)/useCategoryData"; // Adjust the import path as needed
+import Loading from "../(DefaultComponents)/Loading"; // Adjust path as needed
+import useCategoryData from "../(customHooks)/useCategoryData"; // Adjust path as needed
 import axios from "axios";
 
 export default function ShowProducts() {
@@ -12,14 +13,13 @@ export default function ShowProducts() {
   const [categories, setCategories] = useState([]);
   const limit = 12;
 
-  // Custom hook for fetching products based on category
+  // Fetch products based on current page and selected category
   const { items, isLoading, fetchError, pageCount } = useCategoryData(
     currentPage,
     limit,
     selectedCategory
   );
 
-  // Fetch categories from API on initial render
   useEffect(() => {
     const fetchCategories = async () => {
       try {
@@ -32,7 +32,6 @@ export default function ShowProducts() {
         console.error("Failed to fetch categories:", err);
       }
     };
-
     fetchCategories();
   }, []);
 
@@ -43,26 +42,22 @@ export default function ShowProducts() {
     }
   };
 
-  // Loading and error handling
+  const handleCategoryChange = (e) => {
+    setSelectedCategory(e.target.value);
+    setCurrentPage(1);
+  };
+
   if (isLoading) return <Loading />;
   if (fetchError) return <p>Error loading data: {fetchError}</p>;
 
   return (
     <div className="container mx-auto px-2 py-10">
-      {/* Search and Category Filter */}
-      <div className="w-full mb-7 flex gap-5 flex-col sm:flex-row justify-start items-center">
-        <input
-          type="search"
-          className="w-full sm:w-[350px] p-1 px-3 rounded-md outline-0 border"
-          placeholder="Search Here"
-        />
+      {/* Category Filter Dropdown */}
+      <div className="w-full mb-7 flex justify-start items-center">
         <select
-          className="w-full sm:w-[250px] p-1 px-3 rounded-md outline-0 border"
+          className="w-[250px] p-1 px-3 rounded-md outline-0 border"
           value={selectedCategory}
-          onChange={(e) => {
-            setSelectedCategory(e.target.value);
-            setCurrentPage(1); // Reset to the first page when category changes
-          }}
+          onChange={handleCategoryChange}
         >
           <option value="">All Categories</option>
           {categories.map((item, idx) => (
@@ -84,9 +79,8 @@ export default function ShowProducts() {
         )}
       </div>
 
-      {/* Pagination controls */}
+      {/* Pagination Controls */}
       <div className="flex justify-center items-center gap-2 mt-6">
-        {/* Previous Button */}
         <button
           onClick={() => goToPage(currentPage - 1)}
           disabled={currentPage === 1}
@@ -99,7 +93,6 @@ export default function ShowProducts() {
           <FaChevronLeft />
         </button>
 
-        {/* Page Number Buttons */}
         {Array.from({ length: pageCount }, (_, index) => (
           <button
             key={index + 1}
@@ -114,7 +107,6 @@ export default function ShowProducts() {
           </button>
         ))}
 
-        {/* Next Button */}
         <button
           onClick={() => goToPage(currentPage + 1)}
           disabled={currentPage === pageCount}

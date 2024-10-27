@@ -12,7 +12,7 @@ const useCategoryData = (page = 1, limit = 12, category = "") => {
       setIsLoading(true);
       try {
         const response = await axios.get(
-          `/api/foods?page=${page}&limit=${limit}&category=${category}`
+          `/api/foods/category?page=${page}&limit=${limit}&category=${category}`
         );
         setItems(response.data.foods);
         setPageCount(response.data.totalPages);
