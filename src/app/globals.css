@@ -17,6 +17,14 @@
 .rotate {
   animation: rotate 10s infinite linear;
 }
+/* Custom scrollbar hide styling */
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+.scrollbar-hide {
+  -ms-overflow-style: none; /* for IE and Edge */
+  scrollbar-width: none; /* for Firefox */
+}
 
 @keyframes rotate {
   0% {
