@@ -66,7 +66,7 @@ const AboutUsDetailed = () => {
             Over the years, we have accomplished numerous milestones and
             received various awards for excellence in our field. These
             achievements are a testament to our dedication to quality and our
-            clients' trust in our expertise.
+            clients` trust in our expertise.
           </p>
         </div>
       </div>
