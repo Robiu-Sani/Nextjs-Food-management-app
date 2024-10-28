@@ -1,9 +1,18 @@
 import Image from "next/image";
+import { useRouter } from "next/navigation";
 import React from "react";
 
 export default function MenousCard({ product }) {
+  const router = useRouter();
+
+  const handleRoute = () => {
+    router.push(`/Products/${product?._id}`);
+  };
   return (
-    <div className="w-full p-2 rounded-md border flex justify-between items-center gap-2">
+    <div
+      onClick={handleRoute}
+      className="w-full p-2 cursor-pointer rounded-md border flex justify-between items-center gap-2"
+    >
       <div className="h-[80px] flex justify-center items-center w-[80px] rounded-full overflow-hidden">
         <Image
           src={product?.image ?? "https://i.postimg.cc/7h5ctSsS/images.png"}
