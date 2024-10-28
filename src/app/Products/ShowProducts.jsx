@@ -6,6 +6,7 @@ import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 import Loading from "../(DefaultComponents)/Loading"; // Adjust path as needed
 import useCategoryData from "../(customHooks)/useCategoryData"; // Adjust path as needed
 import axios from "axios";
+import SearchBox from "./SearchBox";
 
 export default function ShowProducts() {
   const [currentPage, setCurrentPage] = useState(1);
@@ -47,13 +48,19 @@ export default function ShowProducts() {
     setCurrentPage(1);
   };
 
+  const handleSearch = (data) => {
+    setSelectedCategory(data);
+    setCurrentPage(1);
+  };
+
   if (isLoading) return <Loading />;
   if (fetchError) return <p>Error loading data: {fetchError}</p>;
 
   return (
     <div className="container mx-auto px-2 py-10">
       {/* Category Filter Dropdown */}
-      <div className="w-full mb-7 flex justify-start items-center">
+      <div className="w-full mb-7 flex justify-start gap-5 items-center">
+        <SearchBox categories={categories} handleSearch={handleSearch} />
         <select
           className="w-[250px] p-1 px-3 rounded-md outline-0 border"
           value={selectedCategory}
